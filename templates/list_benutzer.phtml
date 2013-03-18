@@ -1,0 +1,15 @@
+<table>
+	<thead>
+		<tr>
+			<th>ID</th><th>Vorname</th><th>Nachname</th><th>Aktionen</th>
+		</tr>
+	</thead>
+	<tbody data-bind="foreach: benutzer">
+		<tr>
+			<td data-bind="text: id"></td>
+			<td data-bind="text: vorname"></td>
+			<td data-bind="text: nachname"></td>
+			<td><button data-bind="disable: !$parent.hasPermission('benutzer:delete')">Löschen</button></td>
+		</tr>
+	</tbody>
+</table>

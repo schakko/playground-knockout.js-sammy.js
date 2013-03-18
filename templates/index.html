@@ -1,0 +1,36 @@
+<html>
+<head>	
+	<link rel="stylesheet" type="text/css" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/default.css" />
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+	<script type="text/javascript" src="https://raw.github.com/SteveSanderson/knockout.mapping/master/build/output/knockout.mapping-latest.js"></script>
+	<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+	<script type="text/javascript" src="https://raw.github.com/schakko/jquery.inherited-permissions/master/jquery.inherited-permissions.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+	<script type="text/javascript" src="https://raw.github.com/quirkey/sammy/master/lib/min/sammy-latest.min.js"></script>
+	<script type="text/javascript" src="assets/js/app.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.activity-indicator-1.0.0.min.js"></script>
+</head>
+<body>
+	<div class="row">
+		<div class="span4">
+			<ul>
+				<li><a href="#/start">Übersicht</a></li>
+			</ul>
+			<h3>Stammdaten</h3>
+			<ul>
+				<li><a href="#/benutzer/list">Benutzer</a></li>
+				<li><a href="#/autos/list">Autos</a></li>
+			</ul>
+		</div>
+		<div id="container" class="span8">
+		</div>
+	</div>
+	<div class="square" id="indicator"></div>
+</body>
+<script type="text/javascript">
+	var appMeta = <?php echo json_encode($this->data['data']['meta']); ?>;
+	app.run('#/start')
+</script>
+</html>
