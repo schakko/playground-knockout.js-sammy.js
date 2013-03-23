@@ -9,7 +9,13 @@
 			<td data-bind="text: id"></td>
 			<td data-bind="text: vorname"></td>
 			<td data-bind="text: nachname"></td>
-			<td><button data-bind="disable: !$parent.hasPermission('benutzer:delete')">Löschen</button></td>
+			<td><button data-bind="disable: !$parent.hasPermission('benutzer:delete')">Löschen</button></td>	
+			<td><button data-bind="disable: !$parent.hasPermission('benutzer:view'), click: $parent.navigateEdit">Bearbeiten / Anzeigen</button></td>
 		</tr>
 	</tbody>
 </table>
+<script type="text/javascript">
+$(document).ready(function() {
+	app.run("#/benutzer/list")
+})
+</script>

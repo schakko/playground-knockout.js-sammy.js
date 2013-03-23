@@ -1,0 +1,28 @@
+<form class="form-horizontal">
+	<div class="control-group">
+		<label class="control-label">ID</label>
+		<label data-bind="text: data.id"></label>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Vorname</label>
+		<div class="controls" error-key="vorname">
+			<label class="control-label" data-bind="text: data.vorname, visible: !inEditMode()"></label>
+			<input type="text" data-bind="value: data.vorname, visible: inEditMode()" />
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label">Nachname</label>
+		<div class="controls">
+			<label class="control-label" data-bind="text: data.nachname, visible: !inEditMode()"></label>
+			<input type="text" data-bind="value: data.nachname, visible: inEditMode()" />
+		</div>
+	</div>
+	<button data-bind="enable: hasPermission('benutzer:edit') && !inEditMode(), click: edit">Bearbeiten</button>
+	<button data-bind="enable: hasPermission('benutzer:edit') && inEditMode(), click: save">Speichern</button>
+	<button data-bind="enable: hasPermission('benutzer:edit') && inEditMode(), click: discard">Verwerfen</button>
+</form>
+<script type="text/javascript">
+$(document).ready(function() {
+	app.run("#/benutzer/view_edit")
+})
+</script>
